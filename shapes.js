@@ -10,7 +10,7 @@ class Shape {
 // Creates a class to create a circle with specific paramaters and a given color.
 class Circle extends Shape {
   render() {
-    return `<circle cx="50%" cy="50%" r="100" height="100%" width="100%" fill="${this.color}">`;
+    return `<circle cx="50%" cy="50%" r="100" fill="${this.color}">`;
   }
 }
 
@@ -24,7 +24,7 @@ class Square extends Shape {
 // Creates a class to create a triangle with specific paramaters and a given color.
 class Triangle extends Shape {
   render() {
-    return `<polygon height="100%" width="100%" points="0,200 300,200 150,0" fill="${this.color}">`;
+    return `<polygon points="50,250 250,250 150,50" fill="${this.color}">`;
   }
 }
 

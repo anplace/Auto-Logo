@@ -1,0 +1,15 @@
+{
+  "name": "auto-logo",
+  "version": "1.0.0",
+  "description": "A node.js command line application that prompts a user and then creates a logo based on the answers provided.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "anplace"
+  },
+  "author": "Alex Place",
+  "license": "ISC"
+}
