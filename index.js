@@ -55,55 +55,55 @@ function writeToFile(fileName, data) {
 
 async function init() {
   console.log('Starting init');
-  var svgString = '';
-  var svg_file = 'Your-Logo.svg';
+  let svgString = '';
+  const svgFile = 'Your-Logo.svg';
 
   const answers = await inquirer.prompt(questions);
 
-  var user_text = '';
+  let userText = '';
   if (answers.text.length > 0 && answers.text.length < 4) {
-    user_text = answers.text;
+    userText = answers.text;
   } else {
-    console.log(
-      'Invalid user text field detected! Please enter 1-3 Characters, no more and no less'
-    );
+    console.log('Invalid user text field detected! Please enter 1-3 characters, no more and no less');
     return;
   }
-  console.log('User text: [' + user_text + ']');
+  console.log(`User text: [${userText}]`);
 
-  user_font_color = answers['text-color'];
-  console.log('User font color: [' + user_font_color + ']');
+  const userFontColor = answers['text-color'];
+  console.log(`User font color: [${userFontColor}]`);
 
-  user_shape_color = answers.shape;
-  console.log('User shape color: [' + user_shape_color + ']');
+  const userShapeColor = answers.shape;
+  console.log(`User shape color: [${userShapeColor}]`);
 
-  user_shape_type = answers['pixel-image'];
-  console.log('User entered shape = [' + user_shape_type + ']');
+  const userShapeType = answers['pixel-image'];
+  console.log(`User entered shape = [${userShapeType}]`);
 
-  let user_shape;
-  if (user_shape_type === 'Square' || user_shape_type === 'square') {
-    user_shape = new Square();
+  let userShape;
+  if (userShapeType === 'Square' || userShapeType === 'square') {
+    userShape = new Square();
     console.log('User selected Square shape');
-  } else if (user_shape_type === 'Circle' || user_shape_type === 'circle') {
-    user_shape = new Circle();
+  } else if (userShapeType === 'Circle' || userShapeType === 'circle') {
+    userShape = new Circle();
     console.log('User selected Circle shape');
-  } else if (user_shape_type === 'Triangle' || user_shape_type === 'triangle') {
-    user_shape = new Triangle();
+  } else if (userShapeType === 'Triangle' || userShapeType === 'triangle') {
+    userShape = new Triangle();
     console.log('User selected Triangle shape');
   } else {
     console.log('Invalid shape!');
+    return;
   }
-  user_shape.setColor(user_shape_color);
+  userShape.setColor(userShapeColor);
 
-  var svg = new Svg();
-  svg.setTextElement(user_text, user_font_color);
-  svg.setShapeElement(user_shape);
+  const svg = new Svg();
+  svg.setTextElement(userText, userFontColor);
+  svg.setShapeElement(userShape);
   svgString = svg.render();
 
-  console.log('Displaying shape:\n\n' + svgString);
+  console.log(`Displaying shape:\n\n${svgString}`);
 
   console.log('Shape generation complete!');
   console.log('Writing shape to file...');
-  writeToFile(svg_file, svgString);
+  writeToFile(svgFile, svgString);
 }
+
 init();
