@@ -18,3 +18,7 @@ I would like to:
 - Go back through the code and comment the code properly.
 - Clean the VS code up by adding folders.
 - Edit the SVG print out so it is indented onto the webpage better. Just to look more appealing.
+
+## Links:
+- GitHub: https://github.com/anplace/Auto-Logo
+- Deployed Site: 
